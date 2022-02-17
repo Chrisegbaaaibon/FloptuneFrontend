@@ -9,7 +9,7 @@ const validate = async (buttonEl, inputField, errorField) => {
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;    
   if (inputField.value.length == 0) {
     inputField.classList.add('error_active')
-    errorField.innerHTML = "Email Field can't be empty "
+    errorField.innerHTML = "Email Field can't be empty!🙄 "
     errorField.style.display = 'block'
     setTimeout(() => {
       inputField.classList.remove('error_active')
@@ -28,7 +28,7 @@ const validate = async (buttonEl, inputField, errorField) => {
   } else {
     try {
       
-      buttonEl.innerHTML = ''
+      buttonEl.innerHTML = '';
       buttonEl.style.display = 'flex';
       buttonEl.style.justifyContent = 'center';
       buttonEl.style.alignItems = 'center';
@@ -63,7 +63,7 @@ const validate = async (buttonEl, inputField, errorField) => {
     } catch (e) {      
         buttonEl.innerHTML = 'Request Access'
         buttonEl.disabled = false
-        alert('Something went wrong, Try Again')        
+        alert('Something went wrong, Try Again Later')        
     }
     
   }         
