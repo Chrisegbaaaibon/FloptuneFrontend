@@ -36,13 +36,15 @@ const validate = async (buttonEl, inputField, errorField) => {
       buttonEl.disabled = true
       newSpan.classList.add('loader')
       buttonEl.appendChild(newSpan)
-      const response = await fetch('https://floptune.herokuapp.com/api/addEmail', {
+      await fetch('https://floptune.herokuapp.com/api/addEmail', {
         method: 'POST',
         mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json'        
         },
         body: JSON.stringify({ email: inputField.value})
+      }).then((res)=>{
+        res.json()
       })
       if (response.status !== 201) {
         buttonEl.innerHTML = 'Request Access'
